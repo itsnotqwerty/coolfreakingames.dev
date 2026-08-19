@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://[hostname]/sitemap.xml
+Sitemap: https://coolfreakingames.dev/sitemap.xml

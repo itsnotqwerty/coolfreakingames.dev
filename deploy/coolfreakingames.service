@@ -1,0 +1,25 @@
+[Unit]
+Description=CoolFreakinGames hub site (Deno static server)
+After=network.target
+
+[Service]
+Type=simple
+User=coolfreakingames
+Group=coolfreakingames
+WorkingDirectory=__APP_DIR__
+Environment=PORT=8001
+# Use the dependency cache pre-warmed by install.sh (no JSR access at runtime).
+Environment=DENO_DIR=__APP_DIR__/.deno_cache
+# Scoped permissions matching the app's needs (static files + views only).
+ExecStart=__DENO_BIN__ run --allow-read=./static,./src --allow-net --allow-env main.ts
+Restart=on-failure
+RestartSec=5
+# Hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=__APP_DIR__
+
+[Install]
+WantedBy=multi-user.target

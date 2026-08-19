@@ -1,34 +1,16 @@
-import { Application, Router} from "oak";
+import { Application } from "oak";
+import { viewsRouter } from "./src/routes/views.ts";
 
-const router = new Router();
+const PORT = Deno.env.get("PORT") ? Number(Deno.env.get("PORT")) : 8001;
+
 const app = new Application();
 
-router.get("/", (context) => {
-    context.response.body = Deno.readTextFileSync("./static/views/index.html");
-});
-router.get("/:view.html", (context) => {
-    const view = context.params.view;
-    if (view) {
-        try {
-            context.response.body = Deno.readTextFileSync(`./static/views/${view}.html`);
-            context.response.headers.set("Content-Type", "text/html");
-        } catch (error) {
-            console.error(`Error reading view file: ${error}`);
-            context.response.status = 404;
-            context.response.body = "View not found";
-        }
-    } else {
-        context.response.status = 404;
-        context.response.body = "View not provided";
-    }
-});
-
-app.use(router.routes());
-app.use(router.allowedMethods());
+app.use(viewsRouter.routes());
+app.use(viewsRouter.allowedMethods());
 app.use(async (context, next) => {
     const root = "./static";
     try { await context.send({ root }); } catch { await next(); }
 });
 
-app.listen({ port: 8000 });
-console.log("Server is running on http://localhost:8000");
+app.listen({ port: PORT });
+console.log(`Server is running on http://localhost:${PORT}`);
