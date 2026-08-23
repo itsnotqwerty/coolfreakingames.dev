@@ -75,12 +75,16 @@ main {
 }
 
 .games {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
   gap: 1.5rem;
 }
 
 .card {
+  flex: 1 1 18rem;
+  max-width: 27.25rem;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 0.5rem;
