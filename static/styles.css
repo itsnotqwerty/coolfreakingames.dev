@@ -131,7 +131,7 @@ footer {
 a.donate {
   display: inline-block;
   background: #f7931a;
-  color: #fff;
+  color: #000;
   font-weight: 700;
   text-decoration: none;
   padding: 0.25rem 0.75rem;
@@ -139,4 +139,7 @@ a.donate {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-a.donate:hover { background: #e0830f; }
+a.donate:hover {
+  background: #e0830f;
+  color: #000;
+}
