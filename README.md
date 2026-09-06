@@ -1,10 +1,18 @@
 # Cool Freakin' Games
 
-The hub site for [coolfreakingames.dev](https://coolfreakingames.dev) — a small
-landing page linking to the games:
+The Deno and oak-powered hub for
+[coolfreakingames.dev](https://coolfreakingames.dev), home to small, weird web
+games by Samuel Roux. Everything runs in the browser and is open source:
 
-- [16spaces](https://16spaces.coolfreakingames.dev) — a 4×4 abstract strategy game.
-- [FlockWatch](https://flockwatch.coolfreakingames.dev) — a satirical text MMORPG.
+- [16spaces](https://16spaces.coolfreakingames.dev) — a 4×4 abstract strategy
+	game with private lobbies, online matchmaking, Elo ratings, and an AI
+	opponent ([source](https://github.com/itsnotqwerty/16spaces)).
+- [FlockWatch](https://flockwatch.coolfreakingames.dev) — a satirical text
+	MMORPG about bureaucracy, surveillance, and legally not existing
+	([source](https://github.com/itsnotqwerty/flockwatch)).
+- [CRM Simulator](https://crmsim.coolfreakingames.dev) — an incremental idle
+	game about growing a virtual business through contacts, sales, and marketing
+	workflows ([source](https://github.com/itsnotqwerty/crmsimulator)).
 
 ## Run locally
 
